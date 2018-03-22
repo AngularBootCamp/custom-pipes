@@ -1,4 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+
+interface Car {
+  brand: string;
+  year: number;
+  color: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -7,7 +13,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
   myDate = new Date();
   items: string[] = ['abc', '123', 'xyzabcdef', 'abc123', '8756'];
-  cars = [
+  cars: Car[] = [
     { brand: 'Toyota', year: 2014, color: 'Red' },
     { brand: 'Toyota', year: 2011, color: 'Green' },
     { brand: 'Ford', year: 2005, color: 'Black' },
