@@ -39,9 +39,9 @@ export class ContainsXPipe implements PipeTransform {
   name: 'fieldRange'
 })
 export class FieldRangePipe implements PipeTransform {
-  transform(input: { [name: string]: any }[], fieldName: string,
+  transform(input: Record<string, string>[], fieldName: string,
     lower: string, upper: string) {
-    // Why {[name: string]: string}[]? Because the consumer of this pipe
+    // Why Record<string, string>[]? Because the consumer of this pipe
     // could send us any kind of object, but we're expecting to do string
     // comparisons on the property values.
     if (input && input.filter) {
