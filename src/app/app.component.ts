@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 interface Car {
+  [key: string]: string | number;
   brand: string;
   year: number;
   color: string;
@@ -14,7 +15,7 @@ export class AppComponent {
   myDate = new Date();
   items: string[] = ['abc', '123', 'xyzabcdef', 'abc123', '8756'];
   cars: Car[] = [
-    { brand: 'Toyota', year: 2014, color: 'Red' },
+    { brand: 'Toyota', year: 2014 as const, color: 'Red' },
     { brand: 'Toyota', year: 2011, color: 'Green' },
     { brand: 'Ford', year: 2005, color: 'Black' },
     { brand: 'Ford', year: 2009, color: 'White' },
