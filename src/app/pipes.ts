@@ -40,7 +40,7 @@ export class ContainsXPipe implements PipeTransform {
 })
 export class FieldRangePipe implements PipeTransform {
   transform(
-    input: Array<Record<string, any>>,
+    input: Record<string, any>[],
     fieldName: string,
     lower: any,
     upper: any
