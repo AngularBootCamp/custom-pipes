@@ -16,7 +16,7 @@ export class CheckmarkPipe implements PipeTransform {
 })
 export class ToCapsPipe implements PipeTransform {
   transform(input: string) {
-    if (input && input.toUpperCase) {
+    if (input?.toUpperCase) {
       return input.toUpperCase();
     }
     return input;
@@ -28,7 +28,7 @@ export class ToCapsPipe implements PipeTransform {
 })
 export class ContainsXPipe implements PipeTransform {
   transform(collection: string[], searchTerm: string) {
-    if (collection && collection.filter) {
+    if (collection?.filter) {
       return collection.filter(v => v.indexOf(searchTerm) > -1);
     }
     return collection;
@@ -48,7 +48,7 @@ export class FieldRangePipe implements PipeTransform {
     // Why Record<string, any>[]? Because the consumer of this pipe
     // could send us any kind of object. We'll just let JavaScript compare
     // them and end up with normal JavaScript semantics.
-    if (input && input.filter) {
+    if (input?.filter) {
       return input.filter(
         v => v[fieldName] >= lower && v[fieldName] <= upper
       );
