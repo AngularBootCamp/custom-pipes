@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 interface Car {
-  [key: string]: string | number;
   brand: string;
   year: number;
   color: string;

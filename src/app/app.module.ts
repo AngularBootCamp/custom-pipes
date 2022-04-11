@@ -12,10 +12,10 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    ToCapsPipe,
-    ContainsXPipe,
     CheckmarkPipe,
-    FieldRangePipe
+    ContainsXPipe,
+    FieldRangePipe,
+    ToCapsPipe
   ],
   imports: [BrowserModule],
   bootstrap: [AppComponent]

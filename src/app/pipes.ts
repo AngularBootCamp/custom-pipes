@@ -39,20 +39,14 @@ export class ContainsXPipe implements PipeTransform {
   name: 'fieldRange'
 })
 export class FieldRangePipe implements PipeTransform {
-  transform(
-    input: Record<string, any>[],
-    fieldName: string,
-    lower: any,
-    upper: any
+  transform<T, F extends keyof T>(
+    input: T[],
+    fieldName: F,
+    lower: T[F],
+    upper: T[F]
   ) {
-    // Why Record<string, any>[]? Because the consumer of this pipe
-    // could send us any kind of object. We'll just let JavaScript compare
-    // them and end up with normal JavaScript semantics.
-    if (input?.filter) {
-      return input.filter(
-        v => v[fieldName] >= lower && v[fieldName] <= upper
-      );
-    }
-    return input;
+    return input.filter(
+      v => v[fieldName] >= lower && v[fieldName] <= upper
+    );
   }
 }
