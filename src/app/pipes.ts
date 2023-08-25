@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'checkmark'
 })
 export class CheckmarkPipe implements PipeTransform {
-  transform(input: boolean) {
+  transform(input: unknown) {
     const checkMark = '\u2713';
     const xMark = '\u2718';
     return input ? checkMark : xMark;
@@ -12,14 +12,13 @@ export class CheckmarkPipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'toCaps'
+  name: 'sentenceCase'
 })
-export class ToCapsPipe implements PipeTransform {
+export class SentenceCasePipe implements PipeTransform {
   transform(input: string) {
-    if (input?.toUpperCase) {
-      return input.toUpperCase();
-    }
-    return input;
+    return (
+      input.slice(0, 1).toUpperCase() + input.toLowerCase().slice(1)
+    );
   }
 }
 
@@ -48,5 +47,14 @@ export class FieldRangePipe implements PipeTransform {
     return input.filter(
       v => v[fieldName] >= lower && v[fieldName] <= upper
     );
+  }
+}
+
+@Pipe({
+  name: 'defaultToString'
+})
+export class DefaultToStringPipe implements PipeTransform {
+  transform(input: string | null | undefined) {
+    return input ?? '';
   }
 }

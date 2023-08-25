@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import {
   CheckmarkPipe,
   ContainsXPipe,
+  DefaultToStringPipe,
   FieldRangePipe,
-  ToCapsPipe
+  SentenceCasePipe
 } from './pipes';
 
 @NgModule({
@@ -14,8 +15,9 @@ import {
     AppComponent,
     CheckmarkPipe,
     ContainsXPipe,
+    DefaultToStringPipe,
     FieldRangePipe,
-    ToCapsPipe
+    SentenceCasePipe
   ],
   imports: [BrowserModule],
   bootstrap: [AppComponent]
