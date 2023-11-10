@@ -1,4 +1,18 @@
+import {
+  NgFor,
+  UpperCasePipe,
+  LowerCasePipe,
+  DatePipe
+} from '@angular/common';
 import { Component } from '@angular/core';
+
+import {
+  CheckmarkPipe,
+  ContainsXPipe,
+  DefaultToStringPipe,
+  FieldRangePipe,
+  SentenceCasePipe
+} from './pipes';
 
 interface Car {
   brand: string;
@@ -9,7 +23,19 @@ interface Car {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    NgFor,
+    UpperCasePipe,
+    LowerCasePipe,
+    DatePipe,
+    CheckmarkPipe,
+    ContainsXPipe,
+    DefaultToStringPipe,
+    FieldRangePipe,
+    SentenceCasePipe
+  ]
 })
 export class AppComponent {
   myDate = new Date();
