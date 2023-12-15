@@ -30,7 +30,7 @@
   <ul>
     <!--<li *ngFor="let item of (items | containsX:'abc')"> {{item}}</li>-->
     <!--<li *ngFor="let item of containsX(items, 'abc')"> {{item}}</li> -->
-    <li *ngFor="let item of items | containsX : 'abc'">
+    <li *ngFor="let item of items | containsX: 'abc'">
       {{ item }}
     </li>
   </ul>
@@ -48,7 +48,7 @@
 
   <div>Filtered list:</div>
   <ul>
-    <li *ngFor="let c of cars | fieldRange : 'year' : 2009 : 2013">
+    <li *ngFor="let c of cars | fieldRange: 'year' : 2009 : 2013">
       {{ c.year }} {{ c.color }} {{ c.brand }}
     </li>
   </ul>
