@@ -21,18 +21,22 @@
 
   <div>Full list:</div>
   <ul>
-    <li *ngFor="let item of items">
-      {{ item }}
-    </li>
+    @for (item of items; track item) {
+      <li>
+        {{ item }}
+      </li>
+    }
   </ul>
 
   <div>Filtered list:</div>
   <ul>
     <!--<li *ngFor="let item of (items | containsX:'abc')"> {{item}}</li>-->
     <!--<li *ngFor="let item of containsX(items, 'abc')"> {{item}}</li> -->
-    <li *ngFor="let item of items | containsX: 'abc'">
-      {{ item }}
-    </li>
+    @for (item of items | containsX: 'abc'; track item) {
+      <li>
+        {{ item }}
+      </li>
+    }
   </ul>
 </article>
 
@@ -41,15 +45,15 @@
 
   <div>Full list:</div>
   <ul>
-    <li *ngFor="let c of cars">
-      {{ c.year }} {{ c.color }} {{ c.brand }}
-    </li>
+    @for (c of cars; track c) {
+      <li>{{ c.year }} {{ c.color }} {{ c.brand }}</li>
+    }
   </ul>
 
   <div>Filtered list:</div>
   <ul>
-    <li *ngFor="let c of cars | fieldRange: 'year' : 2009 : 2013">
-      {{ c.year }} {{ c.color }} {{ c.brand }}
-    </li>
+    @for (c of cars | fieldRange: 'year' : 2009 : 2013; track c) {
+      <li>{{ c.year }} {{ c.color }} {{ c.brand }}</li>
+    }
   </ul>
 </article>

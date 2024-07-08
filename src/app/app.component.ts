@@ -1,5 +1,4 @@
 import {
-  NgFor,
   UpperCasePipe,
   LowerCasePipe,
   DatePipe
@@ -26,7 +25,6 @@ interface Car {
   styleUrl: './app.component.scss',
   standalone: true,
   imports: [
-    NgFor,
     UpperCasePipe,
     LowerCasePipe,
     DatePipe,
